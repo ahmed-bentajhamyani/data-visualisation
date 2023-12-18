@@ -1,0 +1,98 @@
+<div class="flex flex-col items-center justify-center px-10 py-5">
+
+    <!-- Column Chart -->
+    <div class="border border-gray-200 shadow-xl rounded-2xl w-full h-full my-5">
+        <h5 class="mb-3 p-5 text-2xl font-bold tracking-tight border-b text-gray-900 dark:text-white">Column Chart</h5>
+        <div class="p-5">
+            <div class="flex items-center justify-between space-x-5">
+                <label for="countries"
+                    class="block mb-2 text-sm font-medium whitespace-nowrap text-gray-900 dark:text-white">Select an
+                    option</label>
+                <select (change)="onSelectColumnChart($event)" id="countries"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    <option selected value="countries">Country</option>
+                    <option value="months">Month</option>
+                    <option value="years">Year</option>
+                    <option value="keywords">keyword</option>
+                </select>
+            </div>
+            <div>
+                <div id="columnChart" class="mt-5 w-full h-[500px]"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Clustered Column Chart -->
+    <div class="border border-gray-200 shadow-xl rounded-2xl w-full h-full my-5">
+        <h5 class="mb-3 p-5 text-2xl font-bold tracking-tight border-b text-gray-900 dark:text-white">Clustered Column Chart</h5>
+        <div class="p-5">
+            <div class="flex items-center justify-between space-x-5">
+                <label for="countries"
+                    class="block mb-2 text-sm font-medium whitespace-nowrap text-gray-900 dark:text-white">Select an
+                    option</label>
+                <select (change)="onSelectClusteredColumnChart($event)" id="option"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    <option selected value="countries">Country</option>
+                    <option value="years">Year</option>
+                </select>
+            </div>
+            <div *ngIf="'years' == selectedClusteredColumnChart"
+                class="flex items-center justify-between space-x-5 mt-2">
+                <label for="countries"
+                    class="block mb-2 text-sm font-medium whitespace-nowrap text-gray-900 dark:text-white">Select an
+                    option</label>
+                <select (change)="onSelectCountryClusteredColumnChart($event)" id="countries"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    <option selected value="China">China</option>
+                    <ng-container *ngFor="let country of countries;">
+                        <option *ngIf="'China' != country" value={{country}}>{{country}}</option>
+                    </ng-container>
+                </select>
+            </div>
+            <div>
+                <div id="clusteredColumnChart" class="mt-5 w-full h-[500px]"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Word Cloud -->
+    <div class="border border-gray-200 shadow-xl rounded-2xl w-full h-full my-5">
+        <h5 class="mb-3 p-5 text-2xl font-bold tracking-tight border-b text-gray-900 dark:text-white">Word Cloud</h5>
+        <div class="p-5">
+            <div class="flex items-center justify-between space-x-5">
+                <label for="countries"
+                    class="block mb-2 text-sm font-medium whitespace-nowrap text-gray-900 dark:text-white">Select an
+                    option</label>
+                <select (change)="onSelectWordCloud($event)" id="countries"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    <option selected value="countries">Country</option>
+                    <option value="months">Month</option>
+                    <option value="years">Year</option>
+                    <option value="keywords">keyword</option>
+                </select>
+            </div>
+            <div id="wordCloud" class="mt-5 w-full h-[500px]"></div>
+        </div>
+    </div>
+
+    <!-- Pie Chart -->
+    <div class="border border-gray-200 shadow-xl rounded-2xl w-full h-full my-5">
+        <h5 class="mb-3 p-5 text-2xl font-bold tracking-tight border-b text-gray-900 dark:text-white">Pie Chart</h5>
+        <div class="p-5">
+            <div class="flex items-center justify-between space-x-5">
+                <label for="countries"
+                    class="block mb-2 text-sm font-medium whitespace-nowrap text-gray-900 dark:text-white">Select an
+                    option</label>
+                <select (change)="onSelectPieChart($event)" id="countries"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    <option selected value="countries">Country</option>
+                    <option value="months">Month</option>
+                    <option value="years">Year</option>
+                    <option value="universities">University</option>
+                    <option value="keywords">keyword</option>
+                </select>
+            </div>
+            <div id="pieChart" class="mt-5 w-full h-[500px]"></div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+<nav (scroll)="onWindowScroll($event);" class="flex backdrop-blur w-full z-40 justify-between items-center p-10 h-20"
+    id="navbar">
+
+    <!-- Logo -->
+    <a class="flex items-center w-full select-none">
+        <img src="assets/logo.png" alt="logo" width="60px">
+        <!-- <h1 class="text-xl font-bold mx-4">NFT Store</h1> -->
+    </a>
+
+    <!-- Links -->
+    <ul class="flex flex-row justify-end items-center w-full mx-8 select-none">
+        <li data-dropdown-toggle="exploreDropdown" class="mx-3 cursor-pointer" type="button"></li>
+    </ul>
+</nav>
